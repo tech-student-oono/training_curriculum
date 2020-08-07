@@ -3,7 +3,7 @@ class CalendarsController < ApplicationController
   # １週間のカレンダーと予定が表示されるページ
   def index
     getWeek
-    @plan = Plan.new
+    @plan = plan.new
   end
 
   # 予定の保存
@@ -27,7 +27,7 @@ class CalendarsController < ApplicationController
 
     @week_days = []
 
-    @plans = Plan.where(date: @todays_date..@todays_date + 7)
+    @plans = plan.where(date: @todays_date..@todays_date + 7)
 
     7.times do |x|
       plans = []
